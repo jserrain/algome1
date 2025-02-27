@@ -1,11 +1,11 @@
 package eduopo;
 
-public class Node {
+public class Item {
     private int id;
     private int pes;
     private int valor;
 
-    public Node (int id, int p, int v){
+    public Item (int id, int p, int v){
         this.id = id;
         this.pes = p;
         this.valor = v;
@@ -35,9 +35,13 @@ public class Node {
         this.pes = p;
     }
 
+    public double relacioValorPes() {
+        return (double) this.valor / this.pes;
+    }
+
     @Override
     public String toString() {
-        return "Node [Id=" + id + ", pes=" + pes + ", valor=" + valor + "]";
+        return "Item [Id=" + id + ", pes=" + pes + ", valor=" + valor + ", Relació valor/pes= " + String.format("%.2f", relacioValorPes()) + "]";
     }
 
 
